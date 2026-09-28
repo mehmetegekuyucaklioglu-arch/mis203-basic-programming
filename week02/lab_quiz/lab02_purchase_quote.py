@@ -1,0 +1,27 @@
+print("=== Two-Item Purchase Quote ===")
+item1_name = input("Enter item 1 name: ").strip()
+item1_qty = int(input("Enter item 1 quantity: "))
+item1_price = float(input("Enter item 1 unit price: "))
+item2_name = input("Enter item 2 name: ").strip()
+item2_qty = int(input("Enter item 2 quantity: "))
+item2_price = float(input("Enter item 2 unit price: "))
+delivery_fee = float(input("Enter delivery fee: "))
+tax_rate = float(input("Enter tax percentage (e.g. 10 for 10%): "))
+item1_total = item1_qty * item1_price
+item2_total = item2_qty * item2_price
+items_subtotal = item1_total + item2_total
+tax_amount = items_subtotal * (tax_rate / 100)
+final_total = items_subtotal + tax_amount + delivery_fee
+print()
+print("=" * 40)
+print("PURCHASE QUOTE RECEIPT")
+print("=" * 40)
+print(f"{item1_name} (x{item1_qty}): {item1_total:10.2f} TRY")
+print(f"{item2_name} (x{item2_qty}): {item2_total:10.2f} TRY")
+print("-" * 40)
+print(f"Items Subtotal:  {items_subtotal:10.2f} TRY")
+print(f"Tax ({tax_rate}%):       {tax_amount:10.2f} TRY")
+print(f"Delivery Fee:    {delivery_fee:10.2f} TRY")
+print("=" * 40)
+print(f"FINAL TOTAL:     {final_total:10.2f} TRY")
+print("=" * 40)
