@@ -15,6 +15,11 @@ while True:
   if customer_name.lower() == "q":
     break
 
+
+  if customer_name == "":
+    print("Name cannot be empty! Please try again.\n")
+    continue
+
   print("Products: 1- Coffee (80 TL) | 2- Sandwich (120 TL) | 3- Dessert (90 TL)")
   choice = input("Selected product number (1, 2, or 3): ").strip()
 
@@ -28,7 +33,7 @@ while True:
     item_name = "Dessert"
     base_price = 90.0
   else:
-    print("Invalid selection! Please try again.\n")
+    print("Invalid selection! Please enter 1, 2, or 3.\n")
     continue
 
   is_student = input("Are you a student? (yes/no): ").strip().lower()
@@ -36,12 +41,12 @@ while True:
   if is_student == "yes":
     discount = 0.25  
   else:
-    discount = 0.0
+    discount = 0.0  
 
   lucky_chance = random.randint(1, 10)
   if lucky_chance == 1:
     print(
-        "🎉 Congratulations! You are today's lucky customer, you won an extra"
+        " Congratulations! You are today's lucky customer, you won an extra"
         " 50% discount!"
     )
     discount += 0.50
@@ -49,6 +54,7 @@ while True:
 
   final_price = base_price * (1 - discount)
 
+ 
   final_price = math.ceil(final_price)
 
   print(
@@ -62,8 +68,8 @@ while True:
 print("\n" + "=" * 45)
 print("             DAILY CASH REGISTER REPORT")
 print("=" * 45)
-print(f"Total Items Sold : {total_items}")
-print(f"Total Revenue    : {total_revenue} TL")
-print(f"Lucky Draw Winners: {lucky_winners} people")
+print(f"Total Items Sold   : {total_items}")
+print(f"Total Revenue      : {total_revenue} TL")
+print(f"Lucky Draw Winners : {lucky_winners} people")
 print("=" * 45)
 print("Program successfully terminated.")
